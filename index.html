@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MONSTER LAB — Customización de Labubu</title>
+  <meta name="description" content="Estudio de personalización de art toys. Repaint facial, tinte de peluche, utilería 3D y ropa a medida para tu Labubu." />
+
+  <!-- Tipografías (se cargan en el navegador del visitante) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Capa de foco volumétrico que sigue al cursor (signature) -->
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__brand">
+      <span class="grin" aria-hidden="true">
+        <svg viewBox="0 0 60 22" width="44" height="16">
+          <path d="M2 4 Q30 26 58 4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <g fill="currentColor">
+            <path d="M8 6 l3 6 3-6z"/><path d="M15 8 l2.5 6 2.5-6z"/><path d="M22 9 l2.5 7 2.5-7z"/>
+            <path d="M29 9.5 l2.5 7 2.5-7z"/><path d="M36 9 l2.5 7 2.5-7z"/><path d="M43 8 l2.5 6 2.5-6z"/>
+            <path d="M50 6 l3 6 3-6z"/>
+          </g>
+        </svg>
+      </span>
+      MONSTER<span class="nav__brand-accent">LAB</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#cotizar">Cotizar</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#cotizar" class="btn btn--ghost nav__cta">Reservar cupo</a>
+  </header>
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="hero reveal" id="hero">
+    <div class="hero__halo" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="eyebrow">Estudio de art toys · Buenos Aires</p>
+      <h1 class="hero__title">
+        Re-evoluciona<br/>tu <span class="glitch" data-text="Labubu">Labubu</span>
+      </h1>
+      <p class="hero__sub">
+        Repaint facial, tinte de peluche, utilería impresa en 3D y ropa a medida.
+        Piezas únicas, hechas a mano, con materiales de grado profesional.
+      </p>
+      <div class="hero__actions">
+        <a href="#cotizar" class="btn btn--primary btn--pulse">Reclamá la última modificación</a>
+        <a href="#galeria" class="btn btn--ghost">Ver trabajos</a>
+      </div>
+      <p class="hero__note" data-slots-note>Cupos limitados para proyectos premium este mes.</p>
+    </div>
+
+    <!-- Figura flotante (CSS art, sin assets externos) -->
+    <div class="hero__toy" aria-hidden="true">
+      <div class="toy">
+        <div class="toy__ear toy__ear--l"></div>
+        <div class="toy__ear toy__ear--r"></div>
+        <div class="toy__head">
+          <div class="toy__eye toy__eye--l"></div>
+          <div class="toy__eye toy__eye--r"></div>
+          <div class="toy__grin">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="toy__jersey">10</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. MARQUEE ===== -->
+  <section class="marquee reveal" aria-label="Materiales y reseñas">
+    <div class="marquee__track">
+      <span class="marquee__item">Pintura acrílica Vallejo</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">"El mejor repaint de Buenos Aires"</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Sellador UV Angelus</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Tinte sintético Rit Dye</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">"Mi Labubu es una obra de arte"</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Réplicas Selección #10</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Impresión 3D · PLA</span><span class="marquee__dot">✦</span>
+    </div>
+    <!-- duplicado para loop continuo -->
+    <div class="marquee__track" aria-hidden="true">
+      <span class="marquee__item">Pintura acrílica Vallejo</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">"El mejor repaint de Buenos Aires"</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Sellador UV Angelus</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Tinte sintético Rit Dye</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">"Mi Labubu es una obra de arte"</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Réplicas Selección #10</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Impresión 3D · PLA</span><span class="marquee__dot">✦</span>
+    </div>
+  </section>
+
+  <!-- ===== 3. BENTO GRID ===== -->
+  <section class="section" id="servicios">
+    <div class="section__head reveal">
+      <p class="eyebrow">Lo que hacemos</p>
+      <h2 class="section__title">Cuatro formas de romper la producción en masa</h2>
+    </div>
+    <div class="bento reveal">
+      <article class="bento__card bento__card--wide tilt" data-tilt>
+        <div class="tilt__inner">
+          <span class="bento__tag">01</span>
+          <h3>Repaint facial</h3>
+          <p>Repintado de rostro con acrílicos Vallejo y sellado UV. De sutil a totalmente monstruoso.</p>
+          <span class="bento__price">desde $38.000</span>
+        </div>
+      </article>
+      <article class="bento__card tilt" data-tilt>
+        <div class="tilt__inner">
+          <span class="bento__tag">02</span>
+          <h3>Tinte de peluche</h3>
+          <p>Rit Dye aplicado con aerógrafo para degradados parejos, incluso negros profundos.</p>
+          <span class="bento__price">desde $29.000</span>
+        </div>
+      </article>
+      <article class="bento__card tilt" data-tilt>
+        <div class="tilt__inner">
+          <span class="bento__tag">03</span>
+          <h3>Utilería 3D</h3>
+          <p>Coronas, cuernos, gafas y armas a escala impresas en PLA y esculpidas a mano.</p>
+          <span class="bento__price">desde $12.000</span>
+        </div>
+      </article>
+      <article class="bento__card bento__card--wide tilt" data-tilt>
+        <div class="tilt__inner">
+          <span class="bento__tag">04</span>
+          <h3>Ropa a medida</h3>
+          <p>Indumentaria textil a escala: desde la camiseta #10 de la Selección hasta alta costura monstruosa.</p>
+          <span class="bento__price">desde $18.000</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 4. BLIND BOX ===== -->
+  <section class="section section--center" id="blindbox">
+    <div class="section__head reveal">
+      <p class="eyebrow">Caja sorpresa digital</p>
+      <h2 class="section__title">Abrí la caja y desbloqueá tu beneficio</h2>
+    </div>
+    <div class="blindbox reveal">
+      <button class="box" id="blindBox" aria-label="Abrir caja sorpresa">
+        <div class="box__lid"></div>
+        <div class="box__body">?</div>
+      </button>
+      <div class="blindbox__result" id="boxResult" aria-live="polite"></div>
+      <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+    </div>
+  </section>
+
+  <!-- ===== 5. PARALLAX GALLERY ===== -->
+  <section class="gallery" id="galeria">
+    <div class="section__head reveal">
+      <p class="eyebrow">Portfolio</p>
+      <h2 class="section__title">Galería cinemática</h2>
+    </div>
+    <div class="gallery__grid">
+      <figure class="gallery__item" data-speed="0.92"><div class="ph ph--horror">Terror</div></figure>
+      <figure class="gallery__item" data-speed="1.08"><div class="ph ph--gummy">Gominola</div></figure>
+      <figure class="gallery__item" data-speed="0.85"><div class="ph ph--cyber">Cyberpunk</div></figure>
+      <figure class="gallery__item" data-speed="1.15"><div class="ph ph--lux">Lujo</div></figure>
+      <figure class="gallery__item" data-speed="0.9"><div class="ph ph--sci">Sci-fi</div></figure>
+      <figure class="gallery__item" data-speed="1.05"><div class="ph ph--arg">Selección #10</div></figure>
+    </div>
+  </section>
+
+  <!-- ===== 6. SCARCITY BAR (DARK UX) ===== -->
+  <aside class="scarcity reveal" id="scarcity" data-darkux="Escasez / urgencia falsa">
+    <div class="scarcity__inner">
+      <span class="scarcity__pulse" aria-hidden="true"></span>
+      <p class="scarcity__text">
+        <strong>ALERTA:</strong> solo quedan
+        <span class="ticker" id="slotTicker" data-target="2">0</span>
+        turnos operativos para proyectos premium este mes.
+      </p>
+      <div class="scarcity__timer" id="scarcityTimer" aria-label="Cuenta regresiva">--:--:--</div>
+    </div>
+  </aside>
+
+  <!-- ===== 7. CONFIRM-SHAMING (DARK UX) ===== -->
+  <section class="section" id="testimonios" data-darkux="Confirm-shaming">
+    <div class="section__head reveal">
+      <p class="eyebrow">La comunidad</p>
+      <h2 class="section__title">Labubus que ya no se parecen a ningún otro</h2>
+    </div>
+    <div class="masonry reveal">
+      <blockquote class="card-q"><p>"Llevé un blind box aburrido y volvió convertido en una criatura de terror. Diez puntos."</p><cite>— Flor, Villa Crespo</cite></blockquote>
+      <blockquote class="card-q card-q--tall"><p>"El repaint facial es otra cosa. Se nota el sellado UV, no se pone amarillo con el tiempo."</p><cite>— Nico, La Plata</cite></blockquote>
+      <blockquote class="card-q"><p>"Le hicieron la camiseta #10 a mano. Es mi pieza favorita."</p><cite>— Caro, Palermo</cite></blockquote>
+      <blockquote class="card-q card-q--tall"><p>"Pedí gominola translúcida y quedó tal cual la foto. Brillante, literal."</p><cite>— Juli, Caballito</cite></blockquote>
+      <blockquote class="card-q"><p>"Tinte negro profundo, parejo, sin manchas. Un montón de laburo fino."</p><cite>— Mart, Quilmes</cite></blockquote>
+      <blockquote class="card-q"><p>"Le agregaron cuernos y gemas dentales. Caótico y precioso."</p><cite>— Vale, Núñez</cite></blockquote>
+    </div>
+  </section>
+
+  <!-- Modal confirm-shaming -->
+  <div class="modal" id="shameModal" role="dialog" aria-modal="true" aria-labelledby="shameTitle" hidden>
+    <div class="modal__backdrop"></div>
+    <div class="modal__panel">
+      <span class="darkux-tag">Demo · Confirm-shaming</span>
+      <h3 id="shameTitle">¿En serio te ibas sin tu pieza única?</h3>
+      <p>Miles de Labubus salen iguales de la misma caja. El tuyo no tiene por qué.</p>
+      <div class="modal__actions">
+        <button class="btn btn--primary" data-close-modal>Quiero mi Labubu exclusivo</button>
+        <button class="btn btn--shame" data-close-modal>No, prefiero un muñeco idéntico al resto del rebaño</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 8. QUOTE / PRICE ANCHORING ===== -->
+  <section class="section" id="cotizar">
+    <div class="section__head reveal">
+      <p class="eyebrow">Cotizador</p>
+      <h2 class="section__title">Armá tu proyecto</h2>
+    </div>
+
+    <div class="quote reveal">
+      <div class="quote__options">
+        <label class="opt"><input type="checkbox" data-price="38000" /> <span>Repaint facial</span><b>$38.000</b></label>
+        <label class="opt"><input type="checkbox" data-price="29000" /> <span>Tinte de peluche (aerógrafo)</span><b>$29.000</b></label>
+        <label class="opt"><input type="checkbox" data-price="18000" /> <span>Ropa a medida #10</span><b>$18.000</b></label>
+        <label class="opt"><input type="checkbox" data-price="12000" /> <span>Utilería 3D</span><b>$12.000</b></label>
+        <label class="opt"><input type="checkbox" data-price="9000" /> <span>Gemas dentales + cuernos</span><b>$9.000</b></label>
+
+        <fieldset class="quote__pay">
+          <legend>Forma de pago</legend>
+          <label class="pay"><input type="radio" name="pay" value="transfer" checked /> Transferencia / Mercado Pago <em>−15% OFF</em></label>
+          <label class="pay"><input type="radio" name="pay" value="installments" /> 3 cuotas sin interés (MODO / Nave)</label>
+        </fieldset>
+
+        <!-- DARK UX: basket sneaking -->
+        <fieldset class="quote__sneak" data-darkux="Basket sneaking">
+          <legend>Extras recomendados <span class="darkux-tag">Demo · Basket sneaking (pre-tildado)</span></legend>
+          <label class="opt opt--tiny"><input type="checkbox" data-price="6500" checked /> <span>Caja de exhibición acrílica anti-polvo</span><b>$6.500</b></label>
+          <label class="opt opt--tiny"><input type="checkbox" data-price="4500" checked /> <span>Certificado de autenticidad en placa 3D</span><b>$4.500</b></label>
+          <label class="opt opt--tiny"><input type="checkbox" data-price="3500" checked /> <span>Seguro logístico especial</span><b>$3.500</b></label>
+        </fieldset>
+      </div>
+
+      <aside class="quote__summary">
+        <p class="quote__anchor">Precio de lista <s id="anchorPrice">$0</s></p>
+        <p class="quote__label">Tu precio hoy</p>
+        <p class="quote__total" id="quoteTotal">$0</p>
+        <p class="quote__pay-note" id="payNote">15% OFF aplicado vía transferencia</p>
+        <a href="#" class="btn btn--primary btn--block" id="reserveBtn">Reservar mi cupo</a>
+        <p class="quote__micro">Sin cargos automáticos. Demo educativa.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== 9 (=10 en doc). ROACH MOTEL (DARK UX) ===== -->
+  <section class="section" id="vip">
+    <div class="vip reveal" data-darkux="Roach motel / continuidad forzada">
+      <span class="darkux-tag darkux-tag--corner">Demo · Roach motel</span>
+      <div class="vip__glow" aria-hidden="true"></div>
+      <h2 class="vip__title">Monster Club <span>VIP</span></h2>
+      <p class="vip__pitch"><b>40% OFF instantáneo</b> en tu proyecto actual.</p>
+      <button class="btn btn--primary">Sumarme con un clic</button>
+      <p class="vip__fine">Renovación mensual automática de $14.900 por accesorios sorpresa recurrentes. La baja se gestiona por email con confirmación dentro de los 30 días hábiles.</p>
+    </div>
+  </section>
+
+  <!-- ===== 11. FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="section__head reveal">
+      <p class="eyebrow">Antes de reservar</p>
+      <h2 class="section__title">Preguntas frecuentes</h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq__item">
+        <summary>¿Se puede revertir el repaint si no me gusta?</summary>
+        <div class="faq__body"><p>El repintado con acrílico y sellador UV es permanente por diseño: garantiza durabilidad y protección contra el amarillamiento. Por eso trabajamos con bocetos previos aprobados por vos antes de pintar.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>¿El tinte de peluche destiñe?</summary>
+        <div class="faq__body"><p>Usamos Rit Dye fijado con calor y aplicado con aerógrafo. No destiñe con el uso normal. Evitá lavados con agua caliente y exposición solar prolongada.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>¿Aceptan devoluciones?</summary>
+        <div class="faq__body"><p>Al ser piezas artísticas únicas hechas a pedido, no aceptamos devoluciones una vez iniciada la intervención. Sí ofrecemos ajustes dentro del proyecto acordado.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>¿Cuánto demora un proyecto?</summary>
+        <div class="faq__body"><p>Entre 7 y 20 días hábiles según complejidad. Los proyectos premium con utilería 3D y esculpido pueden extenderse.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__brand">MONSTER<span>LAB</span></p>
+      <p class="footer__copy">Demo educativa de UX persuasivo y dark patterns · Sin transacciones reales.</p>
+    </div>
+  </footer>
+
+  <!-- ===== 12. EXIT-INTENT MODAL (DARK UX) ===== -->
+  <div class="exit" id="exitModal" role="dialog" aria-modal="true" aria-labelledby="exitTitle" hidden>
+    <div class="exit__backdrop"></div>
+    <div class="exit__panel">
+      <span class="darkux-tag">Demo · Exit-intent + aversión a la pérdida</span>
+      <h2 id="exitTitle">Alerta final</h2>
+      <p>Envío gratis a toda Argentina si terminás tu cotización ahora.</p>
+      <div class="exit__timer" id="exitTimer">04:59</div>
+      <button class="btn btn--primary btn--block" data-close-exit>Aprovechar el envío gratis</button>
+      <button class="exit__dismiss" data-close-exit>No, gracias</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
