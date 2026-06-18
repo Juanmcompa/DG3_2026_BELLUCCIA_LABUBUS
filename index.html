@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MONSTER LAB — Customización de Labubu</title>
-  <meta name="description" content="Estudio de personalización de art toys. Repaint facial, tinte de peluche, utilería 3D y ropa a medida para tu Labubu." />
+  <title>MONSTER LAB — Labubus de colección personalizados</title>
+  <meta name="description" content="Creamos Labubus personalizados completamente a mano. Diseños exclusivos, accesorios premium y acabados de colección. No existen dos iguales." />
 
-  <!-- Tipografías (se cargan en el navegador del visitante) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -15,7 +14,6 @@
 </head>
 <body>
 
-  <!-- Capa de foco volumétrico que sigue al cursor (signature) -->
   <div class="spotlight" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 
@@ -35,34 +33,30 @@
       MONSTER<span class="nav__brand-accent">LAB</span>
     </a>
     <nav class="nav__links">
-      <a href="#servicios">Servicios</a>
+      <a href="#estilos">Estilos</a>
       <a href="#galeria">Galería</a>
-      <a href="#cotizar">Cotizar</a>
+      <a href="#proceso">Cómo funciona</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#cotizar" class="btn btn--ghost nav__cta">Reservar cupo</a>
+    <a href="#personalizar" class="btn btn--ghost nav__cta">Reservar mi lugar</a>
   </header>
 
   <!-- ===== 1. HERO ===== -->
   <section class="hero reveal" id="hero">
     <div class="hero__halo" aria-hidden="true"></div>
     <div class="hero__inner">
-      <p class="eyebrow">Estudio de art toys · Buenos Aires</p>
-      <h1 class="hero__title">
-        Re-evoluciona<br/>tu <span class="glitch" data-text="Labubu">Labubu</span>
-      </h1>
+      <p class="eyebrow">Piezas de colección personalizadas</p>
+      <h1 class="hero__title">Tu Labubu merece<br/>ser <span class="glitch" data-text="único">único</span>.</h1>
       <p class="hero__sub">
-        Repaint facial, tinte de peluche, utilería impresa en 3D y ropa a medida.
-        Piezas únicas, hechas a mano, con materiales de grado profesional.
+        Creamos Labubus personalizados completamente a mano. Diseños exclusivos,
+        accesorios premium y acabados de colección. No existen dos iguales.
       </p>
       <div class="hero__actions">
-        <a href="#cotizar" class="btn btn--primary btn--pulse">Reclamá la última modificación</a>
-        <a href="#galeria" class="btn btn--ghost">Ver trabajos</a>
+        <a href="#personalizar" class="btn btn--primary btn--pulse">✨ Quiero crear el mío</a>
+        <a href="#galeria" class="btn btn--ghost">Ver la galería</a>
       </div>
-      <p class="hero__note" data-slots-note>Cupos limitados para proyectos premium este mes.</p>
     </div>
 
-    <!-- Figura flotante (CSS art, sin assets externos) -->
     <div class="hero__toy" aria-hidden="true">
       <div class="toy">
         <div class="toy__ear toy__ear--l"></div>
@@ -79,245 +73,218 @@
     </div>
   </section>
 
-  <!-- ===== 2. MARQUEE ===== -->
-  <section class="marquee reveal" aria-label="Materiales y reseñas">
+  <!-- microcopy en movimiento -->
+  <section class="marquee reveal" aria-label="Nuestra promesa">
     <div class="marquee__track">
-      <span class="marquee__item">Pintura acrílica Vallejo</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">"El mejor repaint de Buenos Aires"</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Sellador UV Angelus</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Tinte sintético Rit Dye</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">"Mi Labubu es una obra de arte"</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Réplicas Selección #10</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Impresión 3D · PLA</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">No vendemos Labubus. Creamos piezas irrepetibles.</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Hecho a mano. Sin producción en serie.</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Convertimos ideas en piezas de colección.</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Una pieza única. Como vos.</span><span class="marquee__dot">✦</span>
     </div>
-    <!-- duplicado para loop continuo -->
     <div class="marquee__track" aria-hidden="true">
-      <span class="marquee__item">Pintura acrílica Vallejo</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">"El mejor repaint de Buenos Aires"</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Sellador UV Angelus</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Tinte sintético Rit Dye</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">"Mi Labubu es una obra de arte"</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Réplicas Selección #10</span><span class="marquee__dot">✦</span>
-      <span class="marquee__item">Impresión 3D · PLA</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">No vendemos Labubus. Creamos piezas irrepetibles.</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Hecho a mano. Sin producción en serie.</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Convertimos ideas en piezas de colección.</span><span class="marquee__dot">✦</span>
+      <span class="marquee__item">Una pieza única. Como vos.</span><span class="marquee__dot">✦</span>
     </div>
   </section>
 
-  <!-- ===== 3. BENTO GRID ===== -->
-  <section class="section" id="servicios">
+  <!-- ===== 2. EL PROBLEMA ===== -->
+  <section class="section section--center problem" id="problema">
     <div class="section__head reveal">
-      <p class="eyebrow">Lo que hacemos</p>
-      <h2 class="section__title">Cuatro formas de romper la producción en masa</h2>
+      <p class="eyebrow">El problema</p>
+      <h2 class="section__title">Todos tienen el mismo Labubu.</h2>
     </div>
-    <div class="bento reveal">
-      <article class="bento__card bento__card--wide tilt" data-tilt>
-        <div class="tilt__inner">
-          <span class="bento__tag">01</span>
-          <h3>Repaint facial</h3>
-          <p>Repintado de rostro con acrílicos Vallejo y sellado UV. De sutil a totalmente monstruoso.</p>
-          <span class="bento__price">desde $38.000</span>
-        </div>
-      </article>
-      <article class="bento__card tilt" data-tilt>
-        <div class="tilt__inner">
-          <span class="bento__tag">02</span>
-          <h3>Tinte de peluche</h3>
-          <p>Rit Dye aplicado con aerógrafo para degradados parejos, incluso negros profundos.</p>
-          <span class="bento__price">desde $29.000</span>
-        </div>
-      </article>
-      <article class="bento__card tilt" data-tilt>
-        <div class="tilt__inner">
-          <span class="bento__tag">03</span>
-          <h3>Utilería 3D</h3>
-          <p>Coronas, cuernos, gafas y armas a escala impresas en PLA y esculpidas a mano.</p>
-          <span class="bento__price">desde $12.000</span>
-        </div>
-      </article>
-      <article class="bento__card bento__card--wide tilt" data-tilt>
-        <div class="tilt__inner">
-          <span class="bento__tag">04</span>
-          <h3>Ropa a medida</h3>
-          <p>Indumentaria textil a escala: desde la camiseta #10 de la Selección hasta alta costura monstruosa.</p>
-          <span class="bento__price">desde $18.000</span>
-        </div>
-      </article>
-    </div>
+    <div class="sea reveal" aria-hidden="true" id="sea"></div>
+    <p class="problem__text reveal">
+      Miles de personas compran el mismo modelo.
+      Vos podés tener una pieza que <strong>nadie más en el mundo</strong> tenga.<br/>
+      Porque un Labubu personalizado deja de ser un juguete.
+      Se convierte en parte de tu personalidad.
+    </p>
   </section>
 
-  <!-- ===== 4. BLIND BOX ===== -->
-  <section class="section section--center" id="blindbox">
+  <!-- ===== 3. ANTES / DESPUÉS ===== -->
+  <section class="section section--center" id="antes-despues">
     <div class="section__head reveal">
-      <p class="eyebrow">Caja sorpresa digital</p>
-      <h2 class="section__title">Abrí la caja y desbloqueá tu beneficio</h2>
+      <p class="eyebrow">Antes / Después</p>
+      <h2 class="section__title">Mirá lo que podemos hacer.</h2>
     </div>
-    <div class="blindbox reveal">
-      <button class="box" id="blindBox" aria-label="Abrir caja sorpresa">
-        <div class="box__lid"></div>
-        <div class="box__body">?</div>
-      </button>
-      <div class="blindbox__result" id="boxResult" aria-live="polite"></div>
-      <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+    <div class="compare reveal" id="compare">
+      <img class="compare__img compare__img--after" src="assets/image2.png" alt="Labubu después de la personalización" />
+      <div class="compare__clip" id="compareClip">
+        <img class="compare__img" src="assets/image1.png" alt="Labubu original de fábrica" />
+      </div>
+      <span class="compare__label compare__label--before">Antes</span>
+      <span class="compare__label compare__label--after">Después</span>
+      <div class="compare__handle" id="compareHandle" role="slider" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <span class="compare__grip">‹ ›</span>
+      </div>
+    </div>
+
+    <ul class="chips reveal">
+      <li>Outfit streetwear</li><li>Versión rockera</li><li>Edición kawaii</li>
+      <li>Estilo luxury</li><li>Anime</li><li>Gótico</li><li>Futurista</li>
+      <li>Halloween</li><li>Navidad</li><li>Con tu mascota</li>
+    </ul>
+    <p class="microcopy reveal">Tu imaginación es el único límite.</p>
+  </section>
+
+  <!-- ===== 4. ELEGÍ TU ESTILO ===== -->
+  <section class="section" id="estilos">
+    <div class="section__head reveal">
+      <p class="eyebrow">Elegí tu estilo</p>
+      <h2 class="section__title">Diseños que hablan de vos</h2>
+    </div>
+    <div class="styles reveal">
+      <button class="style-card"><span class="style-card__emoji">🖤</span>Dark</button>
+      <button class="style-card"><span class="style-card__emoji">💎</span>Luxury</button>
+      <button class="style-card"><span class="style-card__emoji">🌸</span>Kawaii</button>
+      <button class="style-card"><span class="style-card__emoji">⚡</span>Anime</button>
+      <button class="style-card"><span class="style-card__emoji">🏍️</span>Biker</button>
+      <button class="style-card"><span class="style-card__emoji">🎄</span>Temáticos</button>
+      <button class="style-card"><span class="style-card__emoji">⚽</span>Fútbol</button>
+      <button class="style-card"><span class="style-card__emoji">👑</span>Royal</button>
+      <button class="style-card"><span class="style-card__emoji">🎃</span>Halloween</button>
+      <button class="style-card"><span class="style-card__emoji">⭐</span>Pop Culture</button>
+      <button class="style-card"><span class="style-card__emoji">❤️</span>Parejas</button>
+      <button class="style-card"><span class="style-card__emoji">🎁</span>Regalos</button>
     </div>
   </section>
 
-  <!-- ===== 5. PARALLAX GALLERY ===== -->
+  <p class="microcopy microcopy--band reveal">Diseñado exclusivamente para vos.</p>
+
+  <!-- ===== 5. CÓMO FUNCIONA ===== -->
+  <section class="section section--center" id="proceso">
+    <div class="section__head reveal">
+      <p class="eyebrow">¿Cómo funciona?</p>
+      <h2 class="section__title">Muy simple. En solo 4 pasos.</h2>
+    </div>
+    <ol class="steps reveal">
+      <li class="step"><span class="step__num">01</span><h3>Elegís tu Labubu</h3><p>Traés el tuyo o partimos de una base nueva.</p></li>
+      <li class="step"><span class="step__num">02</span><h3>Nos contás tu idea</h3><p>Un estilo, un personaje, una historia. Lo que imagines.</p></li>
+      <li class="step"><span class="step__num">03</span><h3>Diseñamos tu propuesta</h3><p>Te mostramos el boceto y lo ajustamos juntos.</p></li>
+      <li class="step"><span class="step__num">04</span><h3>Recibís una pieza única</h3><p>Hecha a mano, lista para coleccionar.</p></li>
+    </ol>
+    <p class="microcopy reveal">Todo el proceso se realiza artesanalmente.</p>
+  </section>
+
+  <!-- ===== 6. LO HACEMOS REALIDAD ===== -->
+  <section class="section idea" id="idea">
+    <div class="idea__inner reveal">
+      <div class="idea__head">
+        <p class="eyebrow">Lo hacemos realidad</p>
+        <h2 class="section__title">¿Tenés una idea loca?</h2>
+        <p class="idea__lead">Podemos convertir cualquier inspiración en un Labubu.</p>
+      </div>
+      <ul class="idea__list">
+        <li>Tu personaje favorito</li>
+        <li>Tu profesión</li>
+        <li>Tu mascota</li>
+        <li>Tu equipo de fútbol</li>
+        <li>Tu auto</li>
+        <li>Tu banda favorita</li>
+        <li>Un regalo para alguien especial</li>
+        <li>Una versión completamente inventada</li>
+      </ul>
+      <p class="idea__close">Vos imaginás. <span>Nosotros lo hacemos realidad.</span></p>
+    </div>
+  </section>
+
+  <!-- ===== 7. POR QUÉ ELEGIRNOS ===== -->
+  <section class="section" id="porque">
+    <div class="section__head reveal">
+      <p class="eyebrow">¿Por qué elegirnos?</p>
+      <h2 class="section__title">Cada detalle cuenta.</h2>
+    </div>
+    <div class="why reveal">
+      <article class="why__card"><span class="why__icon">✋</span><h3>Hecho completamente a mano</h3><p>Cada detalle recibe horas de trabajo artesanal.</p></article>
+      <article class="why__card"><span class="why__icon">💠</span><h3>Materiales premium</h3><p>Pinturas profesionales y acabados duraderos.</p></article>
+      <article class="why__card"><span class="why__icon">✨</span><h3>Diseños exclusivos</h3><p>No copiamos producciones masivas. Cada proyecto es único.</p></article>
+      <article class="why__card"><span class="why__icon">💬</span><h3>Atención personalizada</h3><p>Diseñamos junto a vos hasta lograr el resultado ideal.</p></article>
+    </div>
+  </section>
+
+  <!-- ===== 8. GALERÍA ===== -->
   <section class="gallery" id="galeria">
     <div class="section__head reveal">
-      <p class="eyebrow">Portfolio</p>
-      <h2 class="section__title">Galería cinemática</h2>
+      <p class="eyebrow">Galería</p>
+      <h2 class="section__title">Cada Labubu tiene una historia.</h2>
     </div>
-    <div class="gallery__grid">
-      <figure class="gallery__item" data-speed="0.92"><div class="ph ph--horror">Terror</div></figure>
-      <figure class="gallery__item" data-speed="1.08"><div class="ph ph--gummy">Gominola</div></figure>
-      <figure class="gallery__item" data-speed="0.85"><div class="ph ph--cyber">Cyberpunk</div></figure>
-      <figure class="gallery__item" data-speed="1.15"><div class="ph ph--lux">Lujo</div></figure>
-      <figure class="gallery__item" data-speed="0.9"><div class="ph ph--sci">Sci-fi</div></figure>
-      <figure class="gallery__item" data-speed="1.05"><div class="ph ph--arg">Selección #10</div></figure>
+    <div class="masonry-gallery reveal">
+      <figure class="mg__item" data-speed="0.9"><img src="assets/image1.png" alt="Labubu personalizado" loading="lazy" /></figure>
+      <figure class="mg__item" data-speed="1.1"><img src="assets/image2.png" alt="Labubu personalizado" loading="lazy" /></figure>
+      <figure class="mg__item" data-speed="0.85"><img src="assets/image3.png" alt="Labubu personalizado" loading="lazy" /></figure>
+      <figure class="mg__item" data-speed="1.12"><img src="assets/image4.png" alt="Labubu personalizado" loading="lazy" /></figure>
+      <figure class="mg__item" data-speed="0.92"><img src="assets/image5.png" alt="Labubu personalizado" loading="lazy" /></figure>
+      <figure class="mg__item" data-speed="1.06"><img src="assets/image6.png" alt="Labubu personalizado" loading="lazy" /></figure>
+      <!-- Duplicá <figure class="mg__item"> y cambiá el src para sumar más fotos -->
+    </div>
+    <p class="microcopy reveal">El próximo Labubu favorito puede ser el tuyo.</p>
+  </section>
+
+  <!-- ===== 9. TESTIMONIOS ===== -->
+  <section class="section" id="testimonios">
+    <div class="section__head reveal">
+      <p class="eyebrow">Testimonios</p>
+      <h2 class="section__title">Historias, no estrellas.</h2>
+    </div>
+    <div class="stories reveal">
+      <blockquote class="story"><p>"Pensé que iba a quedar lindo. Terminó siendo mucho mejor de lo que imaginaba."</p><cite>— Flor, Villa Crespo</cite></blockquote>
+      <blockquote class="story"><p>"Fue el mejor regalo que hice este año."</p><cite>— Nico, La Plata</cite></blockquote>
+      <blockquote class="story"><p>"Ahora todos me preguntan dónde lo hice."</p><cite>— Caro, Palermo</cite></blockquote>
     </div>
   </section>
 
-  <!-- ===== 6. SCARCITY BAR (DARK UX) ===== -->
-  <aside class="scarcity reveal" id="scarcity" data-darkux="Escasez / urgencia falsa">
-    <div class="scarcity__inner">
-      <span class="scarcity__pulse" aria-hidden="true"></span>
-      <p class="scarcity__text">
-        <strong>ALERTA:</strong> solo quedan
-        <span class="ticker" id="slotTicker" data-target="2">0</span>
-        turnos operativos para proyectos premium este mes.
+  <!-- ===== 10. EXCLUSIVIDAD ===== -->
+  <section class="section" id="exclusividad">
+    <div class="exclusive reveal">
+      <div class="exclusive__glow" aria-hidden="true"></div>
+      <p class="eyebrow">Exclusividad real</p>
+      <h2 class="section__title">No hacemos producción en serie.</h2>
+      <p class="exclusive__text">
+        Cada Labubu requiere varias horas de trabajo artesanal. Por eso solo
+        aceptamos una cantidad limitada de proyectos por mes. Si querés reservar
+        el tuyo, hacelo antes de que se completen los cupos.
       </p>
-      <div class="scarcity__timer" id="scarcityTimer" aria-label="Cuenta regresiva">--:--:--</div>
-    </div>
-  </aside>
-
-  <!-- ===== 7. CONFIRM-SHAMING (DARK UX) ===== -->
-  <section class="section" id="testimonios" data-darkux="Confirm-shaming">
-    <div class="section__head reveal">
-      <p class="eyebrow">La comunidad</p>
-      <h2 class="section__title">Labubus que ya no se parecen a ningún otro</h2>
-    </div>
-    <div class="masonry reveal">
-      <blockquote class="card-q"><p>"Llevé un blind box aburrido y volvió convertido en una criatura de terror. Diez puntos."</p><cite>— Flor, Villa Crespo</cite></blockquote>
-      <blockquote class="card-q card-q--tall"><p>"El repaint facial es otra cosa. Se nota el sellado UV, no se pone amarillo con el tiempo."</p><cite>— Nico, La Plata</cite></blockquote>
-      <blockquote class="card-q"><p>"Le hicieron la camiseta #10 a mano. Es mi pieza favorita."</p><cite>— Caro, Palermo</cite></blockquote>
-      <blockquote class="card-q card-q--tall"><p>"Pedí gominola translúcida y quedó tal cual la foto. Brillante, literal."</p><cite>— Juli, Caballito</cite></blockquote>
-      <blockquote class="card-q"><p>"Tinte negro profundo, parejo, sin manchas. Un montón de laburo fino."</p><cite>— Mart, Quilmes</cite></blockquote>
-      <blockquote class="card-q"><p>"Le agregaron cuernos y gemas dentales. Caótico y precioso."</p><cite>— Vale, Núñez</cite></blockquote>
-    </div>
-  </section>
-
-  <!-- Modal confirm-shaming -->
-  <div class="modal" id="shameModal" role="dialog" aria-modal="true" aria-labelledby="shameTitle" hidden>
-    <div class="modal__backdrop"></div>
-    <div class="modal__panel">
-      <span class="darkux-tag">Demo · Confirm-shaming</span>
-      <h3 id="shameTitle">¿En serio te ibas sin tu pieza única?</h3>
-      <p>Miles de Labubus salen iguales de la misma caja. El tuyo no tiene por qué.</p>
-      <div class="modal__actions">
-        <button class="btn btn--primary" data-close-modal>Quiero mi Labubu exclusivo</button>
-        <button class="btn btn--shame" data-close-modal>No, prefiero un muñeco idéntico al resto del rebaño</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== 8. QUOTE / PRICE ANCHORING ===== -->
-  <section class="section" id="cotizar">
-    <div class="section__head reveal">
-      <p class="eyebrow">Cotizador</p>
-      <h2 class="section__title">Armá tu proyecto</h2>
-    </div>
-
-    <div class="quote reveal">
-      <div class="quote__options">
-        <label class="opt"><input type="checkbox" data-price="38000" /> <span>Repaint facial</span><b>$38.000</b></label>
-        <label class="opt"><input type="checkbox" data-price="29000" /> <span>Tinte de peluche (aerógrafo)</span><b>$29.000</b></label>
-        <label class="opt"><input type="checkbox" data-price="18000" /> <span>Ropa a medida #10</span><b>$18.000</b></label>
-        <label class="opt"><input type="checkbox" data-price="12000" /> <span>Utilería 3D</span><b>$12.000</b></label>
-        <label class="opt"><input type="checkbox" data-price="9000" /> <span>Gemas dentales + cuernos</span><b>$9.000</b></label>
-
-        <fieldset class="quote__pay">
-          <legend>Forma de pago</legend>
-          <label class="pay"><input type="radio" name="pay" value="transfer" checked /> Transferencia / Mercado Pago <em>−15% OFF</em></label>
-          <label class="pay"><input type="radio" name="pay" value="installments" /> 3 cuotas sin interés (MODO / Nave)</label>
-        </fieldset>
-
-        <!-- DARK UX: basket sneaking -->
-        <fieldset class="quote__sneak" data-darkux="Basket sneaking">
-          <legend>Extras recomendados <span class="darkux-tag">Demo · Basket sneaking (pre-tildado)</span></legend>
-          <label class="opt opt--tiny"><input type="checkbox" data-price="6500" checked /> <span>Caja de exhibición acrílica anti-polvo</span><b>$6.500</b></label>
-          <label class="opt opt--tiny"><input type="checkbox" data-price="4500" checked /> <span>Certificado de autenticidad en placa 3D</span><b>$4.500</b></label>
-          <label class="opt opt--tiny"><input type="checkbox" data-price="3500" checked /> <span>Seguro logístico especial</span><b>$3.500</b></label>
-        </fieldset>
-      </div>
-
-      <aside class="quote__summary">
-        <p class="quote__anchor">Precio de lista <s id="anchorPrice">$0</s></p>
-        <p class="quote__label">Tu precio hoy</p>
-        <p class="quote__total" id="quoteTotal">$0</p>
-        <p class="quote__pay-note" id="payNote">15% OFF aplicado vía transferencia</p>
-        <a href="#" class="btn btn--primary btn--block" id="reserveBtn">Reservar mi cupo</a>
-        <p class="quote__micro">Sin cargos automáticos. Demo educativa.</p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ===== 9 (=10 en doc). ROACH MOTEL (DARK UX) ===== -->
-  <section class="section" id="vip">
-    <div class="vip reveal" data-darkux="Roach motel / continuidad forzada">
-      <span class="darkux-tag darkux-tag--corner">Demo · Roach motel</span>
-      <div class="vip__glow" aria-hidden="true"></div>
-      <h2 class="vip__title">Monster Club <span>VIP</span></h2>
-      <p class="vip__pitch"><b>40% OFF instantáneo</b> en tu proyecto actual.</p>
-      <button class="btn btn--primary">Sumarme con un clic</button>
-      <p class="vip__fine">Renovación mensual automática de $14.900 por accesorios sorpresa recurrentes. La baja se gestiona por email con confirmación dentro de los 30 días hábiles.</p>
+      <a href="#personalizar" class="btn btn--primary btn--lg">Reservar mi lugar</a>
     </div>
   </section>
 
   <!-- ===== 11. FAQ ===== -->
   <section class="section" id="faq">
     <div class="section__head reveal">
-      <p class="eyebrow">Antes de reservar</p>
-      <h2 class="section__title">Preguntas frecuentes</h2>
+      <p class="eyebrow">Preguntas importantes</p>
+      <h2 class="section__title">Antes de empezar</h2>
     </div>
     <div class="faq reveal">
-      <details class="faq__item">
-        <summary>¿Se puede revertir el repaint si no me gusta?</summary>
-        <div class="faq__body"><p>El repintado con acrílico y sellador UV es permanente por diseño: garantiza durabilidad y protección contra el amarillamiento. Por eso trabajamos con bocetos previos aprobados por vos antes de pintar.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>¿El tinte de peluche destiñe?</summary>
-        <div class="faq__body"><p>Usamos Rit Dye fijado con calor y aplicado con aerógrafo. No destiñe con el uso normal. Evitá lavados con agua caliente y exposición solar prolongada.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>¿Aceptan devoluciones?</summary>
-        <div class="faq__body"><p>Al ser piezas artísticas únicas hechas a pedido, no aceptamos devoluciones una vez iniciada la intervención. Sí ofrecemos ajustes dentro del proyecto acordado.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>¿Cuánto demora un proyecto?</summary>
-        <div class="faq__body"><p>Entre 7 y 20 días hábiles según complejidad. Los proyectos premium con utilería 3D y esculpido pueden extenderse.</p></div>
-      </details>
+      <details class="faq__item"><summary>¿Puedo enviar mi propio Labubu?</summary><div class="faq__body"><p>Sí. Podés mandarnos el tuyo para intervenirlo, o partimos de una base nueva si preferís.</p></div></details>
+      <details class="faq__item"><summary>¿También venden Labubus?</summary><div class="faq__body"><p>Podemos conseguir la base para tu proyecto. Nuestro foco es la personalización: la pieza final es lo que nos importa.</p></div></details>
+      <details class="faq__item"><summary>¿Cuánto tarda?</summary><div class="faq__body"><p>Depende de la complejidad del diseño. Te damos un plazo estimado al aprobar la propuesta, antes de empezar a trabajar.</p></div></details>
+      <details class="faq__item"><summary>¿Hacen envíos?</summary><div class="faq__body"><p>Sí, enviamos a todo el país con embalaje protegido para que tu pieza llegue impecable.</p></div></details>
+      <details class="faq__item"><summary>¿Puedo pedir cualquier diseño?</summary><div class="faq__body"><p>Casi cualquier idea es posible. Si algo no se puede ejecutar bien, te lo decimos y proponemos una alternativa.</p></div></details>
+      <details class="faq__item"><summary>¿Puedo regalar uno?</summary><div class="faq__body"><p>Es uno de los pedidos más lindos que recibimos. Coordinamos fechas y entrega para que llegue a tiempo.</p></div></details>
+      <details class="faq__item"><summary>¿Se puede aprobar el diseño antes?</summary><div class="faq__body"><p>Siempre. Te mostramos el boceto y no avanzamos hasta que estés conforme.</p></div></details>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== 12. CTA FINAL ===== -->
+  <section class="final" id="personalizar">
+    <div class="final__glow" aria-hidden="true"></div>
+    <div class="final__inner reveal">
+      <h2 class="final__title">No tengas el mismo Labubu que todos.</h2>
+      <p class="final__sub">Creá una pieza que hable de vos.<br/>Que cuente una historia. Que nadie más pueda tener.</p>
+      <a href="#" class="btn btn--primary btn--xl" id="startBtn">✨ Empezar mi personalización</a>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer__inner">
       <p class="footer__brand">MONSTER<span>LAB</span></p>
-      <p class="footer__copy">Demo educativa de UX persuasivo y dark patterns · Sin transacciones reales.</p>
+      <p class="footer__copy">Piezas de colección personalizadas · Hecho a mano en Buenos Aires.</p>
     </div>
   </footer>
-
-  <!-- ===== 12. EXIT-INTENT MODAL (DARK UX) ===== -->
-  <div class="exit" id="exitModal" role="dialog" aria-modal="true" aria-labelledby="exitTitle" hidden>
-    <div class="exit__backdrop"></div>
-    <div class="exit__panel">
-      <span class="darkux-tag">Demo · Exit-intent + aversión a la pérdida</span>
-      <h2 id="exitTitle">Alerta final</h2>
-      <p>Envío gratis a toda Argentina si terminás tu cotización ahora.</p>
-      <div class="exit__timer" id="exitTimer">04:59</div>
-      <button class="btn btn--primary btn--block" data-close-exit>Aprovechar el envío gratis</button>
-      <button class="exit__dismiss" data-close-exit>No, gracias</button>
-    </div>
-  </div>
 
   <script src="js/main.js"></script>
 </body>

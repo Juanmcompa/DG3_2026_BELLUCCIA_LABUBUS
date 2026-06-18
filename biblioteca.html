@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONSTER LAB — UI Kit & Design System</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================
+       DESIGN TOKENS (Variables)
+       ========================================= */
+    :root {
+      /* Paleta de Colores (Inferida para temática Monster/Dark) */
+      --bg-base: #0a0a0c;
+      --bg-surface: #141418;
+      --bg-surface-hover: #1e1e24;
+      --text-main: #f0f0f0;
+      --text-muted: #9ca3af;
+      
+      --accent-primary: #d4ff00; /* Verde/Amarillo ácido (Cyberpunk/Monster) */
+      --accent-primary-glow: rgba(212, 255, 0, 0.3);
+      --accent-danger: #ff2a5f; /* Para scarcity y dark patterns */
+      --accent-shame: #4b4b52; /* Gris apagado para confirm-shaming */
+
+      /* Tipografía */
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+
+      /* Espaciado & Radios */
+      --radius-sm: 4px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+      --spacing-md: 1.5rem;
+    }
+
+    /* =========================================
+       RESET Y BASE
+       ========================================= */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 3rem;
+      position: relative;
+    }
+
+    /* Efecto Grano de fondo (Noise) */
+    .grain {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+      background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    }
+
+    /* Layout del UI Kit */
+    .uikit-header {
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--bg-surface-hover);
+      padding-bottom: 2rem;
+    }
+    .uikit-header h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+    .uikit-header p {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+    .uikit-section { margin-bottom: 4rem; }
+    .uikit-section-title {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-primary);
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--accent-primary);
+      padding-left: 10px;
+    }
+    .grid { display: grid; gap: 2rem; }
+    .grid-col-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+    /* =========================================
+       COMPONENTES DEL SISTEMA
+       ========================================= */
+
+    /* 1. Colores */
+    .color-swatch {
+      height: 100px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #000;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+    }
+
+    /* 2. Tipografía */
+    h1, h2, h3, .glitch { font-family: var(--font-display); font-weight: 800; }
+    .t-h1 { font-size: 3.5rem; line-height: 1.1; }
+    .t-h2 { font-size: 2.5rem; }
+    .t-h3 { font-size: 1.5rem; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--accent-primary);
+    }
+    
+    /* Efecto Glitch Básico */
+    .glitch {
+      position: relative;
+      color: var(--text-main);
+      display: inline-block;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0.8;
+    }
+    .glitch::before { left: 2px; text-shadow: -1px 0 var(--accent-danger); clip: rect(24px, 550px, 90px, 0); }
+    .glitch::after { left: -2px; text-shadow: -1px 0 var(--accent-primary); clip: rect(85px, 550px, 140px, 0); }
+
+    /* 3. Botones */
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center;
+      padding: 0.8rem 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    .btn--primary {
+      background-color: var(--accent-primary);
+      color: var(--bg-base);
+      box-shadow: 0 0 15px var(--accent-primary-glow);
+    }
+    .btn--primary:hover {
+      background-color: #e2ff4d;
+      box-shadow: 0 0 25px var(--accent-primary-glow);
+    }
+    .btn--pulse { animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(212, 255, 0, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(212, 255, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(212, 255, 0, 0); }
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--text-muted);
+    }
+    .btn--ghost:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+    .btn--shame { background: transparent; color: var(--accent-shame); text-decoration: underline; font-family: var(--font-body); text-transform: none;}
+    .btn--shame:hover { color: var(--text-main); }
+
+    /* 4. Tags & Badges */
+    .bento__tag, .darkux-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      display: inline-block;
+    }
+    .bento__tag { background: var(--text-main); color: var(--bg-base); }
+    .darkux-tag { background: rgba(255, 42, 95, 0.1); color: var(--accent-danger); border: 1px solid var(--accent-danger); }
+
+    /* 5. Cards & UI Elements */
+    .bento__card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.3s ease;
+    }
+    .bento__card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.1); }
+    .bento__card h3 { margin: 1rem 0 0.5rem; }
+    .bento__card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .bento__price { font-family: var(--font-mono); color: var(--accent-primary); }
+
+    /* 6. Formulario / Cotizador */
+    .opt {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--bg-surface);
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .opt:hover { border-color: var(--bg-surface-hover); }
+    .opt input[type="checkbox"] {
+      appearance: none; width: 20px; height: 20px;
+      border: 2px solid var(--text-muted); border-radius: 4px;
+      background: transparent; position: relative; cursor: pointer;
+    }
+    .opt input[type="checkbox"]:checked {
+      background: var(--accent-primary); border-color: var(--accent-primary);
+    }
+    .opt span { flex-grow: 1; }
+    .opt b { font-family: var(--font-mono); }
+    
+    /* 7. Dark UX Panel (Scarcity) */
+    .scarcity {
+      background: rgba(255, 42, 95, 0.1);
+      border-left: 4px solid var(--accent-danger);
+      padding: 1rem 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .ticker, .scarcity__timer { font-family: var(--font-mono); font-weight: 700; color: var(--accent-danger); }
+
+  </style>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="uikit-header">
+    <h1>Monster Lab</h1>
+    <p>UI Kit & Design System Base — Demo Educativa</p>
+  </header>
+
+  <section class="uikit-section">
+    <h4 class="uikit-section-title">Paleta de Colores</h4>
+    <div class="grid grid-col-3">
+      <div class="color-swatch" style="background: var(--bg-base); color: var(--text-main); border: 1px solid #333;">--bg-base</div>
+      <div class="color-swatch" style="background: var(--bg-surface); color: var(--text-main);">--bg-surface</div>
+      <div class="color-swatch" style="background: var(--text-main);">--text-main</div>
+      <div class="color-swatch" style="background: var(--accent-primary);">--accent-primary</div>
+      <div class="color-swatch" style="background: var(--accent-danger); color: white;">--accent-danger</div>
+      <div class="color-swatch" style="background: var(--text-muted); color: var(--bg-base);">--text-muted</div>
+    </div>
+  </section>
+
+  <section class="uikit-section">
+    <h4 class="uikit-section-title">Tipografía</h4>
+    <div class="grid" style="gap: 1rem;">
+      <p class="eyebrow">Eyebrow / Space Mono</p>
+      <h1 class="t-h1">Re-evoluciona <br><span class="glitch" data-text="Labubu">Labubu</span></h1>
+      <h2 class="t-h2">Cuatro formas de romper</h2>
+      <h3 class="t-h3">Repaint facial permanente</h3>
+      <p style="max-width: 600px;"><b>Outfit Regular & Medium:</b> Repintado de rostro con acrílicos Vallejo y sellado UV. De sutil a totalmente monstruoso. Piezas únicas, hechas a mano, con materiales de grado profesional.</p>
+    </div>
+  </section>
+
+<!-- ESPECIFICACIONES DE IMÁGENES -->
+  <section class="uikit-section" id="media-specs">
+    <h4 class="uikit-section-title">Especificaciones de Imágenes y Media</h4>
+    
+    <div class="grid grid-col-2">
+      
+      <!-- Bloque 1: Lineamientos Técnicos y Performance -->
+      <div class="bento__card">
+        <span class="bento__tag">MEDIA TOKENS</span>
+        <h3 style="margin-top: 0.5rem;">Tratamiento y Optimización</h3>
+        <p>Para asegurar una carga fluida sin perder texturas críticas como el peluche o el acabado acrílico UV:</p>
+        
+        <div class="media-spec-grid">
+          <div class="media-token">
+            <h5>Formatos Permitidos</h5>
+            <p>WebP (Estándar Web)<br>PNG-24 (Solo si requiere transparencia Alpha)</p>
+          </div>
+          <div class="media-token">
+            <h5>Compresión Target</h5>
+            <p>Lossy 82% - 85%<br>Max 250KB por asset</p>
+          </div>
+          <div class="media-token">
+            <h5>Carga Asincrónica</h5>
+            <p>Atributo obligatorio:<br><code>loading="lazy"</code></p>
+          </div>
+          <div class="media-token">
+            <h5>Aspect Ratio Base</h5>
+            <p>Contenedor flexible.<br>Imágenes optimizadas en 3:4 (Vertical) u 1:1</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque 2: Lógica Cinematográfica (Parallax depth) -->
+      <div class="bento__card">
+        <span class="bento__tag">EFECTOS UX</span>
+        <h3 style="margin-top: 0.5rem;">Efectos y Velocidades de Parallax</h3>
+        <p>La profundidad de la galería se maneja de forma asincrónica mediante el atributo dinámico <code>data-speed</code>:</p>
+        
+        <div style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--bg-surface-hover); padding: 0.5rem 0;">
+            <span>Profundidad Trasera (Fondo lento)</span>
+            <span style="color: var(--accent-primary); font-weight: 700;">data-speed="0.85" a "0.92"</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--bg-surface-hover); padding: 0.5rem 0;">
+            <span>Eje Neutro (Velocidad 1:1 Scroll)</span>
+            <span style="color: var(--text-muted);">data-speed="1.0"</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+            <span>Profundidad Delantera (Efecto flotante rápido)</span>
+            <span style="color: var(--accent-danger); font-weight: 700;">data-speed="1.05" a "1.15"</span>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; font-style: italic;">
+          *Nota de UI: El escalado por hover y la velocidad asincrónica cruzada generan el efecto de descalce visual (Scrying depth).
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Preview interactivo del token de imagen de galería -->
+    <div style="margin-top: 2rem;">
+      <p class="eyebrow" style="margin-bottom: 0.75rem;">Preview de Componente Gallery__item (Comportamiento UI)</p>
+      
+      <div class="gallery-item-preview">
+        <div class="gallery-item-preview__wrapper">
+          <!-- Simulación visual del contenedor con máscara -->
+          <div class="gallery-item-preview__img"></div>
+          <div class="gallery-item-preview__overlay">
+            <div class="gallery-item-preview__caption">Cyberpunk #03</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+        Efecto: transition: transform 0.6s (Cubic-bezier) + remoción de grayscale(0.3) al hacer hover.
+      </p>
+    </div>
+  </section>
+
+  <section class="uikit-section">
+    <h4 class="uikit-section-title">Botones e Interacciones</h4>
+    <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+      <button class="btn btn--primary">Botón Primario</button>
+      <button class="btn btn--primary btn--pulse">Primario (Pulse)</button>
+      <button class="btn btn--ghost">Botón Secundario</button>
+      <button class="btn btn--shame">No, prefiero ser idéntico al rebaño</button>
+    </div>
+  </section>
+
+  <section class="uikit-section">
+    <h4 class="uikit-section-title">Etiquetas / Tags</h4>
+    <div style="display: flex; gap: 1rem;">
+      <span class="bento__tag">01</span>
+      <span class="bento__tag">PREMIUM</span>
+      <span class="darkux-tag">Demo · Confirm-shaming</span>
+      <span class="darkux-tag">Demo · Basket sneaking</span>
+    </div>
+  </section>
+
+  <section class="uikit-section">
+    <h4 class="uikit-section-title">Componentes: Bento Cards</h4>
+    <div class="grid grid-col-3">
+      <article class="bento__card">
+        <span class="bento__tag">02</span>
+        <h3>Tinte de peluche</h3>
+        <p>Rit Dye aplicado con aerógrafo para degradados parejos, incluso negros profundos.</p>
+        <span class="bento__price">desde $29.000</span>
+      </article>
+      <article class="bento__card">
+        <span class="bento__tag">03</span>
+        <h3>Utilería 3D</h3>
+        <p>Coronas, cuernos, gafas y armas a escala impresas en PLA y esculpidas a mano.</p>
+        <span class="bento__price">desde $12.000</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="uikit-section">
+    <h4 class="uikit-section-title">Componentes: Formulario / Cotizador</h4>
+    <div style="max-width: 500px;">
+      <label class="opt">
+        <input type="checkbox" checked />
+        <span>Repaint facial</span>
+        <b>$38.000</b>
+      </label>
+      <label class="opt" style="border: 1px solid var(--accent-danger); background: rgba(255, 42, 95, 0.05);">
+        <input type="checkbox" checked />
+        <span>Seguro logístico especial <span class="darkux-tag" style="font-size: 0.6rem; padding: 0.1rem 0.4rem;">Pre-tildado</span></span>
+        <b>$3.500</b>
+      </label>
+    </div>
+  </section>
+
+  <section class="uikit-section">
+    <h4 class="uikit-section-title">Componentes: Alertas de Escasez (Dark UX)</h4>
+    <aside class="scarcity">
+      <p>
+        <strong>ALERTA:</strong> solo quedan <span class="ticker">2</span> turnos operativos.
+      </p>
+      <div class="scarcity__timer">04:59:59</div>
+    </aside>
+  </section>
+
+</body>
+</html>
