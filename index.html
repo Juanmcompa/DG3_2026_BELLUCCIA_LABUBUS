@@ -38,40 +38,137 @@
       <a href="#proceso">Cómo funciona</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#personalizar" class="btn btn--ghost nav__cta">Reservar mi lugar</a>
+    <a href="detalle.html" class="btn btn--ghost nav__cta">Reservar mi lugar</a>
   </header>
 
   <!-- ===== 1. HERO ===== -->
-  <section class="hero reveal" id="hero">
-    <div class="hero__halo" aria-hidden="true"></div>
-    <div class="hero__inner">
-      <p class="eyebrow">Piezas de colección personalizadas</p>
-      <h1 class="hero__title">Tu Labubu merece<br/>ser <span class="glitch" data-text="único">único</span>.</h1>
-      <p class="hero__sub">
-        Creamos Labubus personalizados completamente a mano. Diseños exclusivos,
-        accesorios premium y acabados de colección. No existen dos iguales.
-      </p>
-      <div class="hero__actions">
-        <a href="#personalizar" class="btn btn--primary btn--pulse">✨ Quiero crear el mío</a>
-        <a href="#galeria" class="btn btn--ghost">Ver la galería</a>
-      </div>
+  <section class="hero" id="hero">
+
+    <div class="hero__bg"></div>
+    <div class="hero__grid"></div>
+    <div class="hero__halo"></div>
+
+    <div class="hero__toy">
+
+        <div class="toy">
+            <div class="toy__ear toy__ear--l"></div>
+            <div class="toy__ear toy__ear--r"></div>
+
+            <div class="toy__head">
+
+                <div class="toy__eye toy__eye--l"></div>
+                <div class="toy__eye toy__eye--r"></div>
+
+                <div class="toy__grin">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </div>
+
+            </div>
+
+            <div class="toy__jersey">
+                10
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="hero__toy" aria-hidden="true">
-      <div class="toy">
-        <div class="toy__ear toy__ear--l"></div>
-        <div class="toy__ear toy__ear--r"></div>
-        <div class="toy__head">
-          <div class="toy__eye toy__eye--l"></div>
-          <div class="toy__eye toy__eye--r"></div>
-          <div class="toy__grin">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-          </div>
+    <div class="hero__content">
+
+        <p class="hero__eyebrow">
+            PIEZAS DE COLECCIÓN PERSONALIZADAS
+        </p>
+
+        <h1 class="hero__title">
+
+            Tu Labubu merece
+
+            <br>
+
+            ser <span>único.</span>
+
+        </h1>
+
+        <p class="hero__sub">
+
+            Creamos Labubus completamente personalizados.
+            Diseños exclusivos, acabados premium y piezas
+            irrepetibles hechas para auténticos coleccionistas.
+
+        </p>
+
+        <div class="hero__actions">
+
+            <a href="detalle.html" class="btn btn--primary">
+
+                Crear el mío
+
+            </a>
+
+            <a href="#galeria" class="btn btn--ghost">
+
+                Ver galería
+
+            </a>
+
         </div>
-        <div class="toy__jersey">10</div>
-      </div>
+
     </div>
-  </section>
+
+</section>
+
+  <!-- ===== EXPERIENCIA ===== -->
+<section class="section experience reveal">
+
+    <div class="experience__video">
+
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source src="assets/labubuvideo.mp4" type="video/mp4">
+
+        Tu navegador no soporta videos HTML5.
+
+    </video>
+
+</div>
+
+    <div class="experience__content">
+
+        <p class="eyebrow">
+            Personalización artesanal
+        </p>
+
+        <h2 class="section__title">
+            Cada Labubu cuenta una historia.
+        </h2>
+
+        <p class="experience__text">
+            No hacemos producción en serie.
+            Cada pieza se interviene completamente a mano,
+            utilizando materiales premium y detalles únicos.
+        </p>
+
+        <p class="experience__text">
+            El resultado no es solamente un juguete personalizado.
+            Es una pieza de colección hecha exclusivamente para vos.
+        </p>
+
+        <a href="detalle.html" class="btn btn--primary">
+            Crear el mío
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ========= FIN INTRO PREMIUM ========= -->
 
   <!-- microcopy en movimiento -->
   <section class="marquee reveal" aria-label="Nuestra promesa">
@@ -221,7 +318,7 @@
       <figure class="mg__item" data-speed="1.06"><img src="assets/image6.png" alt="Labubu personalizado" loading="lazy" /></figure>
       <!-- Duplicá <figure class="mg__item"> y cambiá el src para sumar más fotos -->
     </div>
-    <p class="microcopy reveal">El próximo Labubu favorito puede ser el tuyo.</p>
+    <p class="microcopy reveal">El próximo Labubu favorito puede ser el tuyo. <span class="mobile-only">(Deslizá para ver más →)</span></p>
   </section>
 
   <!-- ===== 9. TESTIMONIOS ===== -->
@@ -248,7 +345,7 @@
         aceptamos una cantidad limitada de proyectos por mes. Si querés reservar
         el tuyo, hacelo antes de que se completen los cupos.
       </p>
-      <a href="#personalizar" class="btn btn--primary btn--lg">Reservar mi lugar</a>
+      <a href="detalle.html" class="btn btn--primary btn--lg">Reservar mi lugar</a>
     </div>
   </section>
 
@@ -275,7 +372,7 @@
     <div class="final__inner reveal">
       <h2 class="final__title">No tengas el mismo Labubu que todos.</h2>
       <p class="final__sub">Creá una pieza que hable de vos.<br/>Que cuente una historia. Que nadie más pueda tener.</p>
-      <a href="#" class="btn btn--primary btn--xl" id="startBtn">✨ Empezar mi personalización</a>
+      <a href="detalle.html" class="btn btn--primary btn--xl" id="startBtn">✨ Empezar mi personalización</a>
     </div>
   </section>
 

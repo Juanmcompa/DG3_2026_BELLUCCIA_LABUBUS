@@ -89,12 +89,4 @@
     }, { passive: true });
   }
 
-  /* ---------- CTAs demo ---------- */
-  const startBtn = $("#startBtn");
-  if (startBtn) {
-    startBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Demo: acá iría el formulario de personalización o el contacto por WhatsApp.");
-    });
-  }
 })();
